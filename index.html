@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    
+</head>
+<body>
+    <script src="https://unpkg.com/vue@next"></script>
+    <div class='select-box-container'>
+        <div class="selected">
+            <h2>Select Box</h2>
+            <span class="arrow"></span>
+        </div>
+        <div class="select-option">
+            <div class="option-container">
+                <div class="option">
+                    <span class="tick">tick</span>
+                    <input type="radio" class="radio" id="option1" name='category'>
+                    <label for="option1">Option 1</label>
+                </div>
+                <div class="option">
+                    <input type="radio" class="radio" id="option2" name='category'>
+                    <label for="option2">Option 2</label>
+                </div>
+                <div class="option">
+                    <input type="radio" class="radio" id="option3" name='category'>
+                    <label for="option3">Option 3</label>
+                </div>
+                <div class="option">
+                    <input type="radio" class="radio" id="option4" name='category'>
+                    <label for="option4">Option 4</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id = 'app'>
+        <div class="card-container" v-for="book in books"  @click="toggleFav(book)" :class="{fav : book.isFav}">
+            <span>{{book.tilte}}</span>
+            <span>{{book.author}}</span>
+        </div>
+    </div>
+      
+      <script src="./main.js"></script>
+    </body>
+</html>
